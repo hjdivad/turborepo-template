@@ -1,0 +1,33 @@
+{
+  "name": "wc",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "wc": "./dist/wc.js"
+  },
+  "scripts": {
+    "build": "tsc && chmod +x ./dist/wc.js",
+    "dev": "tsc --watch",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src/ --max-warnings 0"
+  },
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@repo/wc": "*"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@types/tmp": "^0.2.6",
+    "fixturify": "^3.0.0",
+    "tmp-promise": "^3.0.3",
+    "typescript": "*",
+    "vitest": "^3.0.5"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "name": "@repo/wc",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist/**",
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    "./cli": {
+      "import": {
+        "types": "./dist/es/cli.d.mts",
+        "default": "./dist/es/cli.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/cli.d.ts",
+        "default": "./dist/cjs/cli.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "bunchee",
+    "dev": "bunchee --watch",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src/",
+    "test": "vitest --run",
+    "test:watch": "vitest --watch"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/jest-presets": "*",
+    "@repo/typescript-config": "*",
+    "@types/node": "^22.12.0",
+    "bunchee": "^6.3.2",
+    "eslint": "^9.20.0",
+    "@types/tmp": "^0.2.6",
+    "fixturify": "^3.0.0",
+    "tmp-promise": "^3.0.3",
+    "typescript": "*",
+    "vitest": "^3.0.5"
+  }
+}
